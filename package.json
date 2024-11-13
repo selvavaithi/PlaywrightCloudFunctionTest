@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "PlaywrightCloudFunctionTest - for learning purpose",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start-project": "npx playwright test --project=chromium"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
