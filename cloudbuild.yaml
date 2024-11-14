@@ -1,0 +1,16 @@
+# cloudbuild.yaml
+steps:
+  # Step 1: Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build', '-t', 'gcr.io/$PROJECT_ID/playwright-tests', '.'
+    ]
+
+  # Step 2: Push the Docker image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push', 'gcr.io/$PROJECT_ID/playwright-tests'
+    ]
+
+images:
+  - 'gcr.io/$PROJECT_ID/playwright-tests'
